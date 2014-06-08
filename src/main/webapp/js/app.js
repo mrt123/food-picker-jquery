@@ -1,14 +1,12 @@
 require(
     [
         "jquery",
-        "jquery",
         "mealPlanner/plate/plate"
     ],
-    function ($, jQuery, plate) {
+    function ($, Plate) {
 
         var app = {
 
-            currentProduct: plate,
             data: null,
             // array of keys for fast data traversal!
             keys: null,
@@ -34,9 +32,7 @@ require(
                             keys.push(name.toLowerCase());
                         }
 
-                        this.data = data;
-                        this.keys = keys;
-                        plate.init(this);
+                        new Plate($("#plateHolder"), data, keys);
                     }.bind(this)
                 });
             }

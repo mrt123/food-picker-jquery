@@ -21,12 +21,10 @@ require.config({
     }
 });
 
-// redefine jquery module to remove jquery globals.
-//define('jquery-no-conflict', ['jquery'], function (jq) {
-//    return jq.noConflict( true );
-//});
-
-
+//redefine jquery module to remove jquery globals.
+define('jquery-no-conflict', ['jquery'], function (jq) {
+    return jq.noConflict( true );
+});
 
 
 // define js dependencies for entire application.
@@ -37,7 +35,5 @@ require(
         "chosen",
         "app"
     ],
-    function(less, $, chosen, app) {
-
-    console.log("config executed");
-});
+    function(less, $, chosen, app){}
+);
