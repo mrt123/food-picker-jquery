@@ -1,0 +1,214 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgb(246,247,248);
+  background-position:10px 5px;
+  font-family: sans-serif !important;
+  font-size: 14px;
+}
+
+a {display: block; color: white}
+a:link {text-decoration:none;}
+a:visited {text-decoration:none; color: white !important;  }
+a:hover {text-decoration:none;}
+a:active {text-decoration:none;}
+
+#header {
+  height: 50px;
+  background: rgba(36, 36, 36, 0.49);
+
+  #header_center {
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+
+    width: 700px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+
+    #logo {
+      float: left;
+      margin: 0 0 0 100px;
+      height: 29px;
+      width: 264px;
+    }
+  }
+}
+
+#container {
+  position: relative;
+  width: 990px;
+  margin: 0 auto;
+
+  #plateHolder{
+    margin: 20px;
+
+    #plate {
+      border-bottom: 2px solid rgb(246,247,248);
+      @BORDER_WIDTH: 1px;
+      @BORDER_COLOR: rgba(58, 77, 116, 0.67);
+
+      table {
+        width: 100%; word-wrap:break-word;
+        background-color: white;
+        border-collapse: collapse;
+        border-radius: 5px;
+        border-style: hidden; /* hide standard table (collapsed) border */
+        box-shadow: 0 0 0 1px @BORDER_COLOR; /* this draws rounded table border  */
+
+        tr {
+
+          border-bottom: 1px solid @BORDER_COLOR;
+
+          &.foodItem{
+            display: none;  // will show with JQuery animation!
+            border-bottom: 1px dotted @BORDER_COLOR;
+          }
+
+          th {
+            border: 1px solid @BORDER_COLOR;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            min-width: 57px;
+            font-weight: normal;
+            padding: 2px 0px;
+            color: black;
+
+            &.name {
+              color: #539745; //background-color: #539745;
+            }
+
+            &.protein {
+              color: #539745; //background-color: #4a6fb0;
+            }
+
+            &.carbs {
+              color: #be7b00; //background-color: #be7b00;
+            }
+
+            &.fat {
+              color: #5e8fa3; //background-color: #5e8fa3;
+            }
+
+            &.kcal {
+              color: #c6655a; //background-color: #c6655a;
+            }
+
+            &.gi {
+              color: #669bbc; //background-color: #669bbc;
+            }
+
+            &.gl {
+              color: #80aa29; //background-color: #80aa29;
+            }
+
+            &.poli {
+              color: #8e8e8e; //background-color: #8e8e8e;
+            }
+
+            &.mono {
+              color: #c27e00; //background-color: #c27e00;
+            }
+
+            &.saturated {
+              color: #a07dbd; //background-color: #a07dbd;
+            }
+
+            &.complex {
+              color: #79a127; //background-color: #79a127;
+            }
+
+            &.sugar {
+              color: #e15d9f; //background-color: #e15d9f;
+            }
+
+            &.omega3 {
+              color: #b59d7a; //background-color: #b59d7a;
+            }
+
+            &.omega6 {
+              color: #5e8f1d; //background-color: #5e8f1d;
+            }
+          }
+
+          td {
+            border-right: 1px dashed @BORDER_COLOR;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 4px 4px;
+            color: black;
+
+            &:first-child{
+              border-right: 1px solid @BORDER_COLOR;
+                border-bottom: 1px dotted @BORDER_COLOR;
+            }
+            &:nth-child(2){
+              border-right: 1px dashed @BORDER_COLOR;
+            }
+
+            input#foodAmount {
+              margin: 0px 0px 0px 0px;
+              width: 35px;
+            }
+
+            .firstColumnCell {
+              width: 265px;
+              padding-left: 5px;
+              display: inline-block;
+
+              img {
+                &:hover{
+                  cursor: pointer;
+                }
+
+                &.hidden {
+                  display: none;
+                }
+                opacity: 0.5;
+                vertical-align: middle;
+                font-size: 13px;
+                margin-top: 4px;
+              }
+
+              select {
+                width: 250px;
+              }
+
+              .chosen-container {
+                float: right;
+                .chosen-single {
+                  border-radius: 0;
+                  border: none;
+                  box-shadow: none;
+                  background: none;
+                }
+              }
+
+              .chosen-with-drop{
+
+                .chosen-single {
+                  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
+                }
+
+                .chosen-drop{
+                  border: none;
+
+                  .highlighted{
+                    background: grey;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

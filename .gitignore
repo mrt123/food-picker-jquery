@@ -1,0 +1,13 @@
+#IDE related
+*.iml
+.idea/*
+#!idea/runConfigurations
+
+
+
+#Build related
+target/
+servers/
+
+#macOS
+.DS_Store
