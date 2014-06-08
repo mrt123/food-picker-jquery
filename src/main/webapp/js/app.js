@@ -1,13 +1,10 @@
 require(
     [
         "jquery",
-        "mealPlanner/plate/plate",
-        "libs/chosen_v1.1.0/chosen.jquery"  // not a require module, imported to execute! must execute before jQuery
+        "jquery",
+        "mealPlanner/plate/plate"
     ],
-    function ($, plate, chosen) {
-        console.log("application executed");
-
-
+    function ($, jQuery, plate) {
 
         var app = {
 
@@ -25,7 +22,7 @@ require(
                 // fetch all food data upfront!
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:63342/meal_planner/data/food_data.json",
+                    url: "food_data.json",
                     success: function(data){
                         /**
                          * construct array of keys for fast data traversal!
@@ -51,13 +48,5 @@ require(
         });
 
         app.init();
-
-
-
-
-
-
-
-
     }
 );
