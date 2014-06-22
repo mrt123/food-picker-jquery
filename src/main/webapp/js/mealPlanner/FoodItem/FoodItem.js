@@ -64,7 +64,7 @@ define(
                 loadTemplate: function (displayData) {
                     var template = Handlebars.compile(html);
                     var htmlWithData = template(displayData);
-                    this.parentElement.children().last().before(htmlWithData);
+                    this.parentElement.before(htmlWithData);
                 },
 
                 onDOMReady: function () {
@@ -89,8 +89,9 @@ define(
 
                 loadFood: function(index){
                     var currentFood = this.data[index];
+                    this.amount = currentFood.amount;
 
-                    this.DOM.loadFood(currentFood, this.amount);
+                    this.DOM.loadFood(currentFood, currentFood.amount);
 
                     // if this item was previously empty!
                     if(this.matchedIndex == -1){
@@ -112,7 +113,8 @@ define(
 
                 getDisplayData: function(){
                     if(this.matchedIndex > -1) {
-                        return this.DOM.createDisplayScope(this.data[this.matchedIndex], this.amount);
+                        var food =  this.data[this.matchedIndex];
+                        return this.DOM.createDisplayScope(food, this.amount);
                     }
                     else return null;
                 },

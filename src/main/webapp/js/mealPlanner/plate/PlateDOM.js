@@ -37,10 +37,12 @@ define(
                     this.setProteinSummaryValue(total.protein);
                     this.setComplexSummaryValue(total.carbs.complex);
                     this.setSugarSummaryValue(total.carbs.sugar);
+                    this.setCarbsSummaryValue(total.carbs.all);
                     this.setO3SummaryValue(total.fat.polyUnsaturated.o3);
                     this.setO6SummaryValue(total.fat.polyUnsaturated.o6);
                     this.setMonoUnsaturatedSummaryValue(total.fat.monoUnsaturated);
                     this.setSaturatedSummaryValue(total.fat.saturated);
+                    this.setFatSummaryValue(total.fat.all);
                     this.setCaloriesSummaryValue(total.calories);
                     this.setGiSummaryValue(total.gi);
                     this.setGlSummaryValue(total.gl);
@@ -57,10 +59,12 @@ define(
                             total.protein = AmountCalculator.roundUp(total.protein + foodData.protein);
                             total.carbs.complex = AmountCalculator.roundUp(total.carbs.complex + foodData.carbs.complex);
                             total.carbs.sugar = AmountCalculator.roundUp(total.carbs.sugar + foodData.carbs.sugar);
+                            total.carbs.all = AmountCalculator.roundUp(total.carbs.complex + total.carbs.sugar);
                             total.fat.polyUnsaturated.o3 = AmountCalculator.roundUp(total.fat.polyUnsaturated.o3 + foodData.fat.polyUnsaturated.o3);
                             total.fat.polyUnsaturated.o6 = AmountCalculator.roundUp(total.fat.polyUnsaturated.o6 + foodData.fat.polyUnsaturated.o6);
                             total.fat.monoUnsaturated = AmountCalculator.roundUp(total.fat.monoUnsaturated + foodData.fat.monoUnsaturated);
                             total.fat.saturated = AmountCalculator.roundUp(total.fat.saturated + foodData.fat.saturated);
+                            total.fat.all = AmountCalculator.roundUp(total.fat.polyUnsaturated.o3 + total.fat.polyUnsaturated.o6 + total.fat.monoUnsaturated + total.fat.saturated);
                             total.calories = AmountCalculator.roundUp(total.calories + foodData.calories);
                         }
                     }
@@ -79,6 +83,10 @@ define(
                     this.element.find('.sugarSummaryValue').text(value);
                 },
 
+                setCarbsSummaryValue: function(value) {
+                    this.element.find('.carbsSummaryValue').text(value);
+                },
+
                 setO3SummaryValue: function(value) {
                     this.element.find('.o3SummaryValue').text(value);
                 },
@@ -93,6 +101,10 @@ define(
 
                 setSaturatedSummaryValue: function(value) {
                     this.element.find('.saturatedSummaryValue').text(value);
+                },
+
+                setFatSummaryValue: function(value) {
+                    this.element.find('.fatSummaryValue').text(value);
                 },
 
                 setCaloriesSummaryValue: function(value) {

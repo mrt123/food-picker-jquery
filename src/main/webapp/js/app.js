@@ -38,11 +38,6 @@ require(
             }
         };
 
-        $("#discount_credits").change(function(){
-            var newValue = this.value;
-            $('#newValue').html(newValue);
-        });
-
         app.init();
     }
 );

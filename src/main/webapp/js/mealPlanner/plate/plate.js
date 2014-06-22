@@ -33,7 +33,7 @@ define(
 
                 addNewFoodItem: function(){
                     var foodItem = new FoodItem(
-                        this.element.find("tbody"),
+                        this.element.find(".summary").first(),
                         foodSelection,
                         data,
                         this.onFoodUpdate.bind(this)

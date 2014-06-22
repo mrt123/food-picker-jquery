@@ -25,30 +25,36 @@ define(
                     this.setCaloriesValue(displayData.calories);
                     this.setGiValue(displayData.gi);
                     this.setGlValue(displayData.gl);
-                    this.setAmountSelectorValue(100);
+                    this.setAmountSelectorValue(amount);
                     this.enableAmountSelector();
                 },
 
                 createDisplayScope: function(food, weight){
-                    var displayData = {
+                    var data = {
                         carbs: {},
                         fat: {
                             polyUnsaturated: {}
                         }
                     };
 
-                    displayData.amount = weight;
-                    displayData.protein = this.applyWeight(food.protein, weight);
-                    displayData.carbs.complex = this.applyWeight(food.carbs.complex, weight);
-                    displayData.carbs.sugar = this.applyWeight(food.carbs.sugar, weight);
-                    displayData.fat.polyUnsaturated.o3 = this.applyWeight(food.fat.polyUnsaturated.o3, weight);
-                    displayData.fat.polyUnsaturated.o6 = this.applyWeight(food.fat.polyUnsaturated.o6, weight);
-                    displayData.fat.monoUnsaturated = this.applyWeight(food.fat.monoUnsaturated, weight);
-                    displayData.fat.saturated = this.applyWeight(food.fat.saturated, weight);
-                    displayData.calories = this.applyWeight(food.calories, weight);
-                    displayData.gi = food.gi;
-                    displayData.gl = this.applyWeight(food.gi, weight);
-                    return displayData;
+                    data.amount = weight;
+                    data.protein = this.applyWeight(food.protein, weight);
+                    data.carbs.complex = this.applyWeight(food.carbs.complex, weight);
+                    data.carbs.sugar = this.applyWeight(food.carbs.sugar, weight);
+                    data.fat.polyUnsaturated.o3 = this.applyWeight(food.fat.polyUnsaturated.o3, weight);
+                    data.fat.polyUnsaturated.o6 = this.applyWeight(food.fat.polyUnsaturated.o6, weight);
+                    data.fat.monoUnsaturated = this.applyWeight(food.fat.monoUnsaturated, weight);
+                    data.fat.saturated = this.applyWeight(food.fat.saturated, weight);
+                    data.calories = this.applyWeight(food.calories, weight);
+                    data.gi = food.gi;
+                    data.gl = this.applyWeight(food.gi, weight);
+
+                    data.all =  data.protein + data.carbs.complex +  data.carbs.sugar +
+                        data.fat.polyUnsaturated.o3 + data.fat.polyUnsaturated.o6 + data.fat.monoUnsaturated +
+                        data.fat.saturated;
+
+                    data.proteinVsAll = 100 / data.all * data.protein / 100;
+                    return data;
                 },
 
                 /**
