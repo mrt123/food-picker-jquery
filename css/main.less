@@ -1,0 +1,182 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: rgb(246, 247, 248);
+  background-position: 10px 5px;
+  font-family: sans-serif !important;
+  font-size: 14px;
+}
+
+a {
+  display: block;
+  color: white
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+  color: white !important;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
+
+#header {
+  height: 50px;
+  background: rgba(36, 36, 36, 0.49);
+
+  #header_center {
+    margin: 0 auto;
+    padding: 10px 0 10px 0;
+
+    width: 700px;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+
+    #logo {
+      float: left;
+      margin: 0 0 0 100px;
+      height: 29px;
+      width: 264px;
+    }
+  }
+}
+
+#container {
+  position: relative;
+  width: 990px;
+  margin: 0 auto;
+
+  #plateHolder {
+    margin: 20px;
+
+    #plate {
+
+      table {
+        width: 100%;
+        word-wrap: break-word;
+        background-color: white;
+        border-collapse: collapse;
+
+        tr {
+
+          th {
+            border: 3px solid white;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            min-width: 57px;
+            font-weight: normal;
+            padding: 2px 0px;
+            color: white;
+            background: rgba(0, 99, 255, 0.58);
+          }
+
+          td {
+            border: 3px solid white;
+            height: 16px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            padding: 0px 4px;
+          }
+
+          &.foodItem {
+
+            display: none;
+
+            &:nth-child(odd) {
+              background: rgba(0, 100, 255, 0.21);
+              td {
+                border-right: 3px solid white;
+              }
+            }
+
+            &:nth-child(even) {
+              td {
+                border-right: 3px solid rgb(232, 232, 232);
+              }
+            }
+
+            input#foodAmount {
+              margin: 0px 0px 0px 0px;
+              width: 35px;
+            }
+
+            .firstColumnCell {
+              width: 265px;
+              padding-left: 5px;
+              display: inline-block;
+
+              img {
+                &:hover {
+                  cursor: pointer;
+                }
+
+                &.hidden {
+                  display: none;
+                }
+                opacity: 0.5;
+                vertical-align: middle;
+                font-size: 13px;
+                margin-top: 4px;
+              }
+
+              select {
+                width: 250px;
+              }
+
+              .chosen-container {
+                float: right;
+                .chosen-single {
+                  border-radius: 0;
+                  border: none;
+                  box-shadow: none;
+                  background: none;
+                }
+              }
+
+              .chosen-with-drop {
+
+                .chosen-single {
+                  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.15);
+                }
+
+                .chosen-drop {
+                  border: none;
+
+                  .highlighted {
+                    background: grey;
+                  }
+                }
+              }
+            }
+
+          }
+
+          &.summary {
+            background: rgb(255, 170, 0);
+            td {
+              color: white;
+            }
+          }
+
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+

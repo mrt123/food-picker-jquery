@@ -1,0 +1,21 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="sharevehiclePU" transaction-type="RESOURCE_LOCAL">
+    <non-jta-data-source>java:/ShareVehicleDS</non-jta-data-source>
+    <class>com.sharevehicle.entity.User</class>
+    <class>com.sharevehicle.entity.Route</class>
+    <class>com.sharevehicle.entity.Location</class>
+
+    <properties>    <!-- vendor specific properties -->
+
+      <!-- Hibernate specific properties -->
+      <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.JBossAppServerJtaPlatform" />
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+      <property name="show_sql" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>    <!-- this property also ensures id#'s are auto generated -->
+      <property name="hibernate.ejb.entitymanager_factory_name" value="sharevehiclePU"/>
+
+    </properties>
+  </persistence-unit>
+</persistence>
