@@ -1,13 +1,10 @@
-meal-planner
+food-picker-jquery
 ============
 
-Hi Guys,
+Approach with :  Jquery + RequireJS + !text plugin + handlebars
 
+TODO: dependencies managed by Bower
 
-Here is a little project I wrote in order to replace my few years old Excel spreadsheet.
+TODO: check how Require handles unused libs (e.g. AngularJs).
 
-I would greatly appreciate any feedback, and examples of how this code can be improved. It is paramount to me that Classes are well separated, and code is extensible and as easy to read/intuitive as possible.
-
-
-
-Most popular libraries are already part of the project (Angular, Handlebars, JQuery, Less). Running application can be found at: http://mrt123.github.io/meal-planner/
+Demo: http://mrt123.github.io/food-picker-jquery/
